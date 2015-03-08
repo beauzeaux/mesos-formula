@@ -1,0 +1,12 @@
+{% set mesos = salt['grains.filter_by']({
+    'default': {
+        'source': 'http://www.trieuvan.com/apache/mesos/0.21.1/mesos-0.21.1.tar.gz',
+        'source_hash' : 'md5=5b335a7c48a590d319eccbeba33e484f',
+        'is_master' : False,
+        'master' : {
+          'ip' : '10.0.0.10',
+          'port' : '5050'
+        }
+    }, 
+}, merge=salt['pillar.get']('mesos')) %}
+va

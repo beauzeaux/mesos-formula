@@ -1,5 +1,4 @@
 {% from "mesos/map.jinja" import mesos with context %}
-{% set mesos_download_dir='/tmp/mesos-build' %}
 
 mesos-deps:
   pkg.installed:
@@ -29,14 +28,3 @@ mesos:
   pkg.installed:
     - pkgs:
       - mesos
-
-
-/etc/init/mesos-master.conf:
-  file.managed:
-    - source: salt://mesos/templates/mesos-master.conf.template
-    - template: jinja
-
-/etc/init/mesos-slave.conf:
-  file.managed:
-    - source: salt://mesos/templates/mesos-slave.conf.template
-    - template: jinja

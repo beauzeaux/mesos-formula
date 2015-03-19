@@ -1,3 +1,3 @@
 base:
   '*':
-    - mesos
+    - mesos.master
